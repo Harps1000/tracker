@@ -14,7 +14,7 @@ class Students extends Component {
                 <section>
                     {data.map(student => {
                         const {_id, name, startingCohort, currentBlock} = student
-                        return <Student _id={_id} name={name} startingCohort={startingCohort} currentBlock={currentBlock}/>
+                        return <Student key={name} _id={_id} name={name} startingCohort={startingCohort} currentBlock={currentBlock}/>
                     })}
                 </section>
             )
