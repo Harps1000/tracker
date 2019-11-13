@@ -1,14 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios"
+import {Link} from "@reach/router";
 
-const Student = ({_id, name, startingCohort, currentBlock}) =>{
-    return(
-        <ul>
-            <li>ID: {_id}</li>
-            <li>Name: {name}</li>
-            <li>Starting Cohort{startingCohort}</li>
-            <li>Current Block {currentBlock}</li>
-        </ul>
-    )
+class Student extends Component{
+
+    render(){
+        
+        return(
+            
+            <ul>
+                <li>ID: {this.props._id}</li>
+                <li>Name: {this.props.name}</li>
+                <li>Starting Cohort{this.props.startingCohort}</li>
+                <li>Current Block {this.props.currentBlock}</li>
+                <Link to={`/students/${this.props._id}`}>
+                <button>More</button>
+                </Link>
+            </ul>
+        )
+    }
+    
 }
+
 
 export default Student;

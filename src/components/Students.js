@@ -26,7 +26,7 @@ class Students extends Component {
 componentDidMount(){
     axios.get("https://nc-student-tracker.herokuapp.com/api/students")
     .then((info)=>{
-        console.log(info.data.students)
+       
         const data = info.data.students
         this.setState({data})
     })
